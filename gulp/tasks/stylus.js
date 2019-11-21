@@ -4,7 +4,11 @@ module.exports = function() {
       $.gulp
         .src("src/static/stylus/main.styl")
         .pipe($.glp.sourcemaps.init())
-        .pipe($.glp.stylus({}))
+        .pipe(
+          $.glp.stylus({
+            "include css": true
+          })
+        )
         // .pipe(glp.sass())
         // .pipe(glp.less())
         .pipe(
@@ -21,7 +25,7 @@ module.exports = function() {
         )
         .pipe($.glp.csso())
         .pipe($.glp.sourcemaps.write())
-        .pipe($.gulp.dest("build/static/css"))
+        .pipe($.gulp.dest("build/static/css/"))
         .pipe($.browserSync.stream())
     );
   });

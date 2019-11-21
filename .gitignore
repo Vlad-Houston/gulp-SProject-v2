@@ -1,6 +1,7 @@
 node_modules
 package-lock.json
 build
+.gulp
 
 Skip to content
 Search or jump to…
